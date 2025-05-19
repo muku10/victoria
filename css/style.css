@@ -1677,7 +1677,7 @@ div#preloader {
 
 .contact-form button[type=submit]:hover {
   color: #fff;
-  border: 1px solid #243E89;
+  border: 1px solid rgb(13, 153, 72);;
   background: #243E89;
 }
 
