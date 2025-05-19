@@ -1,0 +1,21 @@
+.services-icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 30%;
+}
+.footer-contacts ul  li a{
+    text-decoration: none;
+    color:#000;
+}
+.footer-contacts ul  li a:hover{
+    text-decoration: none;
+    color:#0D9948;
+    col
+}
+.row .team-top {
+    justify-content: center;
+    display: flex;
+}
+h2{
+    color:#243E89;
+}
