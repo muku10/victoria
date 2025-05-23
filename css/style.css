@@ -265,10 +265,12 @@ div#preloader {
   width: 100%;
   height: auto;
   /* background: rgba(0, 0, 0, 0.6); */
-      background: rgb(254 250 250 / 61%);
+      background: rgb(254 250 250 / 81%);
   z-index: 9;
 }
-
+.main-menu ul.navbar-nav li.active .page-scroll {
+  color: #243E89;
+}
 .navbar-header a.navbar-brand {
   display: inline-block;
   height: 70px;
@@ -300,14 +302,28 @@ div#preloader {
   position: absolute;
   width: 100%;
 }
+.navbar-brand.page-scroll img {
+  height: 45px;
+    width: auto;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-brand.page-scroll img {
+    height: auto;
+    width: 123px;
+  }
+  .main-menu .navbar-right li a.page-scroll ,.main-menu .navbar-right li a.dropdown-toggle {
+    font-size:12px;
+  }
+}
+
 
 .main-menu ul.navbar-nav li.active a:hover {
   background: none;
-  color: #fff;
+  color: #243E89;
 }
 
 .main-menu ul.navbar-nav li.active a:focus {
-  color: #fff;
+  color: #243E89;
 }
 
 .main-menu ul.navbar-nav li.active a {
@@ -2350,7 +2366,15 @@ span.email-notes {
   margin: 0;
   padding-top: 30px;
 }
-
+.single-services {
+  background-color: #f8f9fa; /* light gray */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05); /* subtle shadow */
+}
+.services-details h4{
+  margin-top: 8px;
+}
 /*----------------------------------------
  .End CSS
 ----------------------------------------*/
