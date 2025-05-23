@@ -10,7 +10,7 @@
 .footer-contacts ul  li a:hover{
     text-decoration: none;
     color:#0D9948;
-    col
+
 }
 .row .team-top {
     justify-content: center;
@@ -18,4 +18,9 @@
 }
 h2{
     color:#243E89;
+}
+.single-icon i:hover{
+    color:#243E89;
+    border-color: #243E89;
+    cursor: pointer;
 }
