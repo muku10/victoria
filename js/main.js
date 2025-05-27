@@ -210,3 +210,24 @@
   }
 
 })(jQuery);
+
+ function setEqualHeight(selector) {
+      const elements = document.querySelectorAll(selector);
+      let maxHeight = 0;
+
+      // Reset all heights
+      elements.forEach(el => el.style.height = 'auto');
+
+      // Measure max height
+      elements.forEach(el => {
+        const height = el.getBoundingClientRect().height;
+        if (height > maxHeight) maxHeight = height;
+      });
+
+      // Apply max height
+      elements.forEach(el => el.style.height = maxHeight + 'px');
+    }
+    window.addEventListener('load', () => setEqualHeight('.single-team-member '));
+    window.addEventListener('resize', () => setEqualHeight('.single-team-member '));
+    window.addEventListener('load', () => setEqualHeight('.single-services'));
+    window.addEventListener('resize', () => setEqualHeight('.single-services'));

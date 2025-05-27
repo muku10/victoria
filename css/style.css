@@ -2369,7 +2369,7 @@ span.email-notes {
 .single-services {
   /* background-color: #f8f9fa;  */
   border-radius: 10px;
-  padding: 20px;
+  /* padding: 20px; */
   /* box-shadow: 0 0 10px rgba(0,0,0,0.05); */
       box-shadow: 0 0 10px #00000020;
 }
