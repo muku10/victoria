@@ -20,8 +20,9 @@ h2{
     color:#243E89;
 }
 .single-icon i:hover{
-    color:#243E89;
-    border-color: #243E89;
+    background-color:#243E89;
+    border-color: #fff;
+    color: #fff;
     cursor: pointer;
 }
 .single-services .services-icon img{
