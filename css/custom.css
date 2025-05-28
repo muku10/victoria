@@ -9,7 +9,7 @@
 }
 .footer-contacts ul  li a:hover{
     text-decoration: none;
-    color:#0D9948;
+    color:var(--secondary-color);
 
 }
 .row .team-top {
@@ -17,10 +17,10 @@
     display: flex;
 }
 h2{
-    color:#243E89;
+    color:var(--primary-color);
 }
 .single-icon i:hover{
-    background-color:#243E89;
+    background-color:var(--primary-color);
     border-color: #fff;
     color: #fff;
     cursor: pointer;
