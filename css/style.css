@@ -270,7 +270,7 @@ div#preloader {
   width: 100%;
   height: auto;
   /* background: rgba(0, 0, 0, 0.6); */
-      background: rgb(254 250 250 / 81%);
+      background: rgb(254 250 250 / 100%);
   z-index: 9;
 }
 .main-menu ul.navbar-nav li.active .page-scroll {
@@ -407,7 +407,7 @@ div#preloader {
 /*--------------------------------*/
 
 .header-area.stick {
-  background:rgba(189, 188, 188, 0.81);
+  background:rgba(189, 188, 188, 0.90);
   height: 70px;
   position: fixed;
   top: 0;
@@ -807,7 +807,7 @@ div#preloader {
 }
 
 .suscribe-input button {
-  background: var(--secondary-color) none repeat scroll 0 0;
+  background: var(--primary-color) none repeat scroll 0 0;
   border: medium none;
   border-radius: 0 20px 20px 0;
   color: #fff;
@@ -1595,7 +1595,7 @@ div#preloader {
 }
 
 .single-blog .ready-btn:hover {
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--primary-color);
   color: #fff;
 }
 
@@ -1698,7 +1698,7 @@ div#preloader {
 
 .contact-form button[type=submit]:hover {
   color: #fff;
-  border: 1px solid rgb(13, 153, 72);;
+  border: 1px solid var(--primary-color);
   background: var(--primary-color);
 }
 
@@ -2044,8 +2044,8 @@ div#preloader {
 
 .ready-btn:hover {
   color: #fff;
-  background: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
   text-decoration: none;
 }
 

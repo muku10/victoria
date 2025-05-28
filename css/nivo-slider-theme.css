@@ -70,21 +70,21 @@ Supports Thumbs: true
 
 .layer-1-3 a.ready-btn:hover {
   color: #fff;
-  background: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
   text-decoration: none;
 }
 
-.ready-btn.right-btn {
+/* .ready-btn.right-btn {
   margin-right: 15px;
-  background: var(--secondary-color);
-  border: 1px solid var(--secondary-color) !important;
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color) !important;
 }
 
 .ready-btn.right-btn:hover {
   background: transparent !important;
   border: 1px solid #fff !important;
-}
+} */
 
 .nivo-controlNav {
   bottom: 0;
