@@ -38,3 +38,10 @@ a:hover{
   /* background: black; */
   color: white;
 }
+.services-details .single-services .services-icon img:hover{
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+.services-details .single-services .services-icon {
+    overflow: hidden; /* hides the part of image that goes outside */
+}
