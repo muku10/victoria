@@ -34,3 +34,7 @@ h2{
 a:hover{
     cursor: pointer;
 }
+::selection {
+  /* background: black; */
+  color: white;
+}
