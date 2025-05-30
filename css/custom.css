@@ -3,45 +3,60 @@
     height: 70px;
     border-radius: 30%;
 } */
-.footer-contacts ul  li a{
-    text-decoration: none;
-    color:#000;
+.footer-contacts ul li a {
+  text-decoration: none;
+  color: #000;
 }
-.footer-contacts ul  li a:hover{
-    text-decoration: none;
-    color:var(--secondary-color);
-
+.footer-contacts ul li a:hover {
+  text-decoration: none;
+  color: var(--secondary-color);
 }
 .row .team-top {
-    justify-content: center;
-    display: flex;
+  justify-content: center;
+  display: flex;
 }
-h2{
-    color:var(--primary-color);
+h2 {
+  color: var(--primary-color);
 }
-.single-icon i:hover{
-    background-color:var(--primary-color);
-    border-color: #fff;
-    color: #fff;
-    cursor: pointer;
+.single-icon i {
+  transition-property: border-color, background-color, color;
+  transition-duration: 400ms;
+  transition-timing-function: ease;
 }
-.single-services .services-icon img{
-    border-radius: 10px 10px 0 0;
+.single-icon:hover i {
+  background-color: var(--primary-color);
+  border-color: #fff;
+  color: #fff;
+  cursor: pointer;
+}
+.single-services .services-icon img {
+  border-radius: 10px 10px 0 0;
 }
 .single-services p {
-  padding: 0 20px   20px 20px;
+  padding: 0 20px 20px 20px;
 }
-a:hover{
-    cursor: pointer;
+a:hover {
+  cursor: pointer;
 }
 ::selection {
   /* background: black; */
   color: white;
 }
-.services-details .single-services .services-icon img:hover{
-    transform: scale(1.03);
-    transition: all 0.3s ease-in-out;
+.services-details .single-services .services-icon img:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease-in-out;
 }
 .services-details .single-services .services-icon {
-    overflow: hidden; /* hides the part of image that goes outside */
+  overflow: hidden; /* hides the part of image that goes outside */
+}
+
+footer .fa-angle-right {
+  margin-inline-end: 1rem;
+}
+
+.single-blog .blog-text p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: clip;
 }

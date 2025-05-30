@@ -1,0 +1,7 @@
+/* npx @tailwindcss/cli -i ./css/tw-input.css -o ./css/tw-output.css --watch */
+
+@import 'tailwindcss' prefix(tw);
+
+@theme {
+  --color-gray: #f9f9f9;
+}
