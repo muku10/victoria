@@ -1,278 +1,461 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Victorian Accounting Services</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <head>
+    <meta charset="utf-8" />
+    <title>Victorian Accounting Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/nivo-slider/css/nivo-slider.css" rel="stylesheet">
-  <link href="lib/owlcarousel/owl.carousel.css" rel="stylesheet">
-  <link href="lib/owlcarousel/owl.transitions.css" rel="stylesheet">
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/venobox/venobox.css" rel="stylesheet">
-  
-  <!-- Nivo Slider Theme -->
-  <link href="css/nivo-slider-theme.css" rel="stylesheet">
-  
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/tw-output.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="lib/nivo-slider/css/nivo-slider.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/owl.carousel.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/owl.transitions.css" rel="stylesheet" />
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/venobox/venobox.css" rel="stylesheet" />
 
-  <!-- Responsive Stylesheet File -->
-  <link href="css/responsive.css" rel="stylesheet">
-<link href="css/custom.css" rel="stylesheet">
-  <!-- =======================================================
+    <!-- Nivo Slider Theme -->
+    <link href="css/nivo-slider-theme.css" rel="stylesheet" />
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/tw-output.css" rel="stylesheet" />
+
+    <!-- Responsive Stylesheet File -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <!-- =======================================================
     Theme Name: eBusiness
     Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
-</head>
 
-<body data-spy="scroll" data-target="#navbar-example">
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Feather icons
+        feather.replace();
+      });
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        gsap.registerPlugin(ScrollTrigger);
 
-  <div id="preloader"></div>
+        document.querySelectorAll(".counter-decimal").forEach((counter) => {
+          const endValue = parseFloat(counter.innerText);
+          gsap.from(counter, {
+            innerText: 0,
+            duration: 3,
+            snap: { innerText: 0.1 },
+            scrollTrigger: {
+              trigger: counter,
+              start: "top 80%", // adjust as needed
+              toggleActions: "play none none none", // play only once
+            },
+            onUpdate: function () {
+              counter.innerText = Number(counter.innerText).toFixed(1);
+            },
+          });
+        });
+        document.querySelectorAll(".counter").forEach((counter) => {
+          const endValue = parseFloat(counter.innerText);
+          gsap.from(counter, {
+            innerText: 0,
+            duration: 3,
+            snap: { innerText: 1 },
+            scrollTrigger: {
+              trigger: counter,
+              start: "top 80%", // adjust as needed
+              toggleActions: "play none none none", // play only once
+            },
+            onUpdate: function () {
+              counter.innerText = Number(counter.innerText).toFixed(0);
+            },
+          });
+        });
+      });
+    </script>
+  </head>
 
-  <header>
-    <!-- header-area start -->
-    <div id="sticker" class="header-area">
+  <body data-spy="scroll" data-target="#navbar-example">
+    <div id="preloader"></div>
+
+    <header>
+      <!-- header-area start -->
+      <div id="sticker" class="header-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <!-- Navigation -->
+              <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button
+                    type="button"
+                    class="navbar-toggle collapsed"
+                    data-toggle="collapse"
+                    data-target=".bs-example-navbar-collapse-1"
+                    aria-expanded="false"
+                  >
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <!-- Brand -->
+                  <a
+                    class="navbar-brand page-scroll sticky-logo"
+                    href="index.html"
+                  >
+                    <!-- <h1><span>e</span>Business</h1> -->
+                    <!-- Uncomment below if you prefer to use an image logo -->
+                    <img src="img/logo.png" alt="" title="" />
+                  </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div
+                  class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1"
+                  id="navbar-example"
+                >
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                      <a class="page-scroll" href="#home">Home</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#services">Services</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                        >Drop Down<span class="caret"></span
+                      ></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Drop Down 1</a></li>
+                        <li><a href="#">Drop Down 2</a></li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a class="page-scroll" href="#blog">Blog</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- navbar-collapse -->
+              </nav>
+              <!-- END: Navigation -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- header-area end -->
+    </header>
+    <!-- header end -->
+
+    <!-- Start Slider Area -->
+    <div id="home" class="slider-area">
+      <div class="bend niceties preview-2">
+        <div id="ensign-nivoslider" class="slides">
+          <img
+            src="img/slider/slider1.jpg"
+            alt=""
+            title="#slider-direction-1"
+          />
+          <img
+            src="img/slider/slider2.jpg"
+            alt=""
+            title="#slider-direction-2"
+          />
+          <img
+            src="img/slider/slider3.jpg"
+            alt=""
+            title="#slider-direction-3"
+          />
+        </div>
+
+        <!-- direction 1 -->
+        <div id="slider-direction-1" class="slider-direction slider-one">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="slider-content">
+                  <!-- layer 1 -->
+                  <div
+                    class="layer-1-1 hidden-xs wow slideInDown"
+                    data-wow-duration="2s"
+                    data-wow-delay=".2s"
+                  >
+                    <h2 class="title1">Victorian Accounting Service</h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div
+                    class="layer-1-2 wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".1s"
+                  >
+                    <h1 class="title2">
+                      Accounting , Advisory , Tax and everything fot
+                      Individuals, SME , Corporates and Everyone
+                    </h1>
+                  </div>
+                  <!-- layer 3 -->
+                  <div
+                    class="layer-1-3 hidden-xs wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".2s"
+                  >
+                    <a class="ready-btn right-btn page-scroll" href="#services"
+                      >See Services</a
+                    >
+                    <a class="ready-btn page-scroll" href="#about"
+                      >Learn More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- direction 2 -->
+        <div id="slider-direction-2" class="slider-direction slider-two">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="slider-content text-center">
+                  <!-- layer 1 -->
+                  <div
+                    class="layer-1-1 hidden-xs wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".2s"
+                  >
+                    <h2 class="title1">Victorian Accounting Service</h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div
+                    class="layer-1-2 wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".1s"
+                  >
+                    <h1 class="title2">
+                      Accounting , Advisory , Tax and everything fot
+                      Individuals, SME , Corporates and Everyone
+                    </h1>
+                  </div>
+                  <!-- layer 3 -->
+                  <div
+                    class="layer-1-3 hidden-xs wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".2s"
+                  >
+                    <a class="ready-btn right-btn page-scroll" href="#services"
+                      >See Services</a
+                    >
+                    <a class="ready-btn page-scroll" href="#about"
+                      >Learn More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- direction 3 -->
+        <div id="slider-direction-3" class="slider-direction slider-two">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="slider-content">
+                  <!-- layer 1 -->
+                  <div
+                    class="layer-1-1 hidden-xs wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".2s"
+                  >
+                    <h2 class="title1">Victorian Accounting Service</h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div
+                    class="layer-1-2 wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".1s"
+                  >
+                    <h1 class="title2">
+                      Accounting , Advisory , Tax and everything fot
+                      Individuals, SME , Corporates and Everyone
+                    </h1>
+                  </div>
+                  <!-- layer 3 -->
+                  <div
+                    class="layer-1-3 hidden-xs wow slideInUp"
+                    data-wow-duration="2s"
+                    data-wow-delay=".2s"
+                  >
+                    <a class="ready-btn right-btn page-scroll" href="#services"
+                      >See Services</a
+                    >
+                    <a class="ready-btn page-scroll" href="#about"
+                      >Learn More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Slider Area -->
+
+    <!-- counters area start -->
+    <section class="tw:bg-black tw:text-white tw:py-16">
+      <div
+        class="tw:container tw:mx-auto tw:px-4 tw:grid tw:grid-cols-2 tw:md:grid-cols-4 tw:gap-8 tw:text-center"
+      >
+        <!-- Item 1 -->
+        <div>
+          <div class="tw:text-8xl tw:font-bold">
+            <span class="counter">45</span>+
+          </div>
+          <div class="tw:mt-2 tw:text-xl">Years of Experince</div>
+        </div>
+
+        <!-- Item 2 -->
+        <div>
+          <div class="tw:text-8xl tw:font-bold">
+            <span class="counter">500</span>+
+          </div>
+          <div class="tw:mt-2 tw:text-xl">Satisfied Clients</div>
+        </div>
+
+        <!-- Item 3 -->
+        <div>
+          <div class="tw:text-8xl tw:font-bold">
+            <span class="counter">250</span>+
+          </div>
+          <div class="tw:mt-2 tw:text-xl">Project Completed</div>
+        </div>
+
+        <!-- Item 4 -->
+        <div>
+          <div class="tw:text-8xl tw:font-bold">
+            <span class="counter">99</span>%
+          </div>
+          <div class="tw:mt-2 tw:text-xl">Customer Satisfaction</div>
+        </div>
+      </div>
+    </section>
+    <!-- counters area end -->
+
+    <!-- Start Service area -->
+    <div id="services" class="services-area area-padding">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 col-sm-12">
-
-            <!-- Navigation -->
-            <nav class="navbar navbar-default">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-                <!-- Brand -->
-                <a class="navbar-brand page-scroll sticky-logo" href="index.html">
-                  <!-- <h1><span>e</span>Business</h1> -->
-                  <!-- Uncomment below if you prefer to use an image logo -->
-                  <img src="img/logo.png" alt="" title="" />
-								</a>
-              </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="active">
-                    <a class="page-scroll" href="#home">Home</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#about">About</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#services">Services</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#team">Team</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#portfolio">Portfolio</a>
-                  </li>
-
-                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Drop Down<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href=# >Drop Down 1</a></li>
-                      <li><a href=# >Drop Down 2</a></li>
-                    </ul> 
-                  </li>
-
-                  <li>
-                    <a class="page-scroll" href="#blog">Blog</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- navbar-collapse -->
-            </nav>
-            <!-- END: Navigation -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- header-area end -->
-  </header>
-  <!-- header end -->
-
-  <!-- Start Slider Area -->
-  <div id="home" class="slider-area">
-    <div class="bend niceties preview-2">
-      <div id="ensign-nivoslider" class="slides">
-        <img src="img/slider/slider1.jpg" alt="" title="#slider-direction-1" />
-        <img src="img/slider/slider2.jpg" alt="" title="#slider-direction-2" />
-        <img src="img/slider/slider3.jpg" alt="" title="#slider-direction-3" />
-      </div>
-
-      <!-- direction 1 -->
-      <div id="slider-direction-1" class="slider-direction slider-one">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content">
-                <!-- layer 1 -->
-                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1">Victorian Accounting Service </h2>
-                </div>
-                <!-- layer 2 -->
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Accounting , Advisory , Tax and everything fot Individuals, SME , Corporates and Everyone</h1>
-                </div>
-                <!-- layer 3 -->
-                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                  <a class="ready-btn page-scroll" href="#about">Learn More</a>
-                </div>
-              </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline services-head text-center">
+              <h2>Our Services</h2>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- direction 2 -->
-      <div id="slider-direction-2" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content text-center">
-                <!-- layer 1 -->
-                <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1">Victorian Accounting Service</h2>
+        <div class="row text-center">
+          <div class="services-contents">
+            <!-- Start Left services -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="about-move">
+                <div class="services-details">
+                  <div class="single-services">
+                    <a class="services-icon" href="#">
+                      <!-- <i class="fa fa-code"></i> -->
+                      <img src="img/training.jpg" alt="" />
+                    </a>
+                    <a href="#">
+                      <h4>Training Materials</h4>
+                    </a>
+                    <p>
+                      ABN Lookup will continue to display trading names for a
+                      further five years until 31 October 2023.
+                    </p>
+                  </div>
                 </div>
-                <!-- layer 2 -->
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Accounting , Advisory , Tax and everything fot Individuals, SME , Corporates and Everyone</h1>
+                <!-- end about-details -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="about-move">
+                <div class="services-details">
+                  <div class="single-services">
+                    <a class="services-icon" href="#">
+                      <!-- <i class="fa fa-camera-retro"></i> -->
+                      <img src="img/tax.jpg" alt="" />
+                    </a>
+                    <a href="#">
+                      <h4>Latest Tax News</h4>
+                    </a>
+                    <p>
+                      will have to make sure the prototype looks finished by
+                      inserting text or photo.make sure the prototype looks
+                      finished by.
+                    </p>
+                  </div>
                 </div>
-                <!-- layer 3 -->
-                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                  <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                <!-- end about-details -->
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="about-move">
+                <div class="services-details">
+                  <div class="single-services bg-light p-3 rounded shadow-sm">
+                    <a class="services-icon" href="#">
+                      <img src="img/acn.jpg" alt="" />
+                    </a>
+                    <a href="#">
+                      <h4>ABN, ACN, Business Name Lookup</h4>
+                    </a>
+                    <p>
+                      ABN Lookup will continue to display trading names for a
+                      further five years until 31 October 2023.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- direction 3 -->
-      <div id="slider-direction-3" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="slider-content">
-                <!-- layer 1 -->
-                <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <h2 class="title1">Victorian Accounting Service</h2>
-                </div>
-                <!-- layer 2 -->
-                <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                  <h1 class="title2">Accounting , Advisory , Tax and everything fot Individuals, SME , Corporates and Everyone</h1>
-                </div>
-                <!-- layer 3 -->
-                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                  <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                  <a class="ready-btn page-scroll" href="#about">Learn More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Slider Area -->
-
-   <!-- Start Service area -->
-  <div id="services" class="services-area area-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline services-head text-center">
-            <h2>Our Services</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div class="services-contents">
-          <!-- Start Left services -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-											<!-- <i class="fa fa-code"></i> -->
-                       <img src="img/training.jpg" alt=""  >
-									</a>
-           <a href="#">
-                  <h4>Training Materials </h4>
-           </a>
-                  <p>
-                    ABN Lookup will continue to display trading names for a further five years until 31 October 2023.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="about-move">
-              <div class="services-details">
-                <div class="single-services">
-                  <a class="services-icon" href="#">
-											<!-- <i class="fa fa-camera-retro"></i> -->
-                       <img src="img/tax.jpg" alt=""  >
-										</a>
-           <a  href="#">
-                  <h4>Latest Tax News</h4>
-                  </a>
-                  <p>
-                    will have to make sure the prototype looks finished by inserting text or photo.make sure the prototype looks finished by.
-                  </p>
-                </div>
-              </div>
-              <!-- end about-details -->
-            </div>
-          </div>
-         <div class="col-md-4 col-sm-4 col-xs-12">
-  <div class="about-move">
-    <div class="services-details">
-      <div class="single-services bg-light p-3 rounded shadow-sm">
-        <a class="services-icon" href="#">
-          <img src="img/acn.jpg" alt="">
-           </a>
-           <a  href="#">
-          <h4>ABN, ACN, Business Name Lookup</h4>
-        </a>
-        <p>
-          ABN Lookup will continue to display trading names for a further five years until 31 October 2023.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-          <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+            <!-- <div class="col-md-4 col-sm-4 col-xs-12">
             end col-md-4
             <div class=" about-move">
               <div class="services-details">
@@ -325,79 +508,94 @@
               end about-details
             </div>
           </div> -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Service area -->
+    <!-- End Service area -->
 
-  <!-- Start About area -->
-  <div id="about" class="about-area tw:bg-transparent! area-padding">
-    <div class="containerWrapper tw:bg-[linear-gradient(to_bottom,var(--color-light)_50%,var(--tw-color-gray)_50%)]">
-      <div class="container">
-        <div class="row tw:mb-6">
-          <div class="well-left">
-            <div class="single-well">
-              <a href="#">
-								  <img src="img/about/1.jpg" alt="">
-								</a>
+    <!-- Start About area -->
+    <div id="about" class="about-area tw:bg-transparent! area-padding tw:pb-0!">
+      <div
+        class="containerWrapper tw:bg-[linear-gradient(to_bottom,var(--color-light)_50%,var(--tw-color-gray)_50%)]"
+      >
+        <div class="container">
+          <div class="row tw:mb-6">
+            <div class="well-left">
+              <div class="single-well">
+                <a href="#">
+                  <img
+                    src="https://ceoworld.biz/wp-content/uploads/2022/07/Accounting-Services.jpg"
+                    alt=""
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    .
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline text-center">
-            <h2>Victorian Accounting Services - Providing Accounting Help
-</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- single-well start-->
-        
-        <!-- single-well end-->
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <div class="well-middle">
-            <div class="single-well">
-              <p>
-                The team at Victorian Accounting Services is formed of highly experienced accountants with experience across multi-national accounting & advisory, corporates & start up businesses. The team brings more than 45 years of experience dealing with the needs of any businesses & individuals. The team is highly focussed on removing bureacracy and achieve the sole goal of customer satisfaction.
-              </p>
-              <!-- <a href="#">
-                <h4 class="sec-head">project Maintenance</h4>
-              </a>
-              <p>
-                Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
-              </p>
-              <ul>
-                <li>
-                  <i class="fa fa-check"></i> Interior design Package
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Building House
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Reparing of Residentail Roof
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Renovaion of Commercial Office
-                </li>
-                <li>
-                  <i class="fa fa-check"></i> Make Quality Products
-                </li>
-              </ul> -->
+
+      <div class="containerwrapper area-padding tw:bg-gray">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>
+                  Victorian Accounting Services - Providing Accounting Help
+                </h2>
+              </div>
             </div>
           </div>
+          <div class="row">
+            <!-- single-well start-->
+
+            <!-- single-well end-->
+            <div class="tw:md:columns-2">
+              <div class="well-middle">
+                <div class="single-well">
+                  <p>
+                    The team at Victorian Accounting Services is formed of
+                    highly experienced accountants with experience across
+                    multi-national accounting & advisory, corporates & start up
+                    businesses. The team brings more than 45 years of experience
+                    dealing with the needs of any businesses & individuals. The
+                    team is highly focussed on removing bureacracy and achieve
+                    the sole goal of customer satisfaction.
+                  </p>
+                  <!-- <a href="#">
+                  <h4 class="sec-head">project Maintenance</h4>
+                </a>
+                <p>
+                  Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
+                </p>
+                <ul>
+                  <li>
+                    <i class="fa fa-check"></i> Interior design Package
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i> Building House
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i> Reparing of Residentail Roof
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i> Renovaion of Commercial Office
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i> Make Quality Products
+                  </li>
+                </ul> -->
+                </div>
+              </div>
+            </div>
+            <!-- End col-->
+          </div>
         </div>
-        <!-- End col-->
       </div>
     </div>
-  </div>
-  <!-- End About area -->
- <!-- <div id="about" class="about-area area-padding">
+    <!-- End About area -->
+
+    <!-- <div id="about" class="about-area area-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -466,30 +664,39 @@
         
       </div>
     </div> -->
-  </div>
- 
+    <!-- </div>s -->
 
-
- 
-
-  <!-- Start Wellcome Area -->
-  <div class="wellcome-area">
-    <div class="well-bg">
-      <div class="test-overly"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="wellcome-text">
-              <div class="well-text text-center">
-                <h2>Welcome To Our Accounting Services</h2>
-                <p>
-                  Busuness Lorem ipsum dolor sit amet, consectetur adipiscing elit.luctus est eget congue.
-                </p>
-                <div class="subs-feilds">
-                  <div class="suscribe-input">
-                    <input type="email" class="email form-control width-80" id="sus_email" placeholder="Email">
-                    <button type="submit" id="sus_submit" class="add-btn width-20">Subscribe</button>
-                    <div id="msg_Submit" class="h3 text-center hidden"></div>
+    <!-- Start Wellcome Area -->
+    <div class="wellcome-area">
+      <div class="well-bg">
+        <div class="test-overly"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="wellcome-text">
+                <div class="well-text text-center">
+                  <h2>Welcome To Our Accounting Services</h2>
+                  <p>
+                    Busuness Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit.luctus est eget congue.
+                  </p>
+                  <div class="subs-feilds">
+                    <div class="suscribe-input">
+                      <input
+                        type="email"
+                        class="email form-control width-80"
+                        id="sus_email"
+                        placeholder="Email"
+                      />
+                      <button
+                        type="submit"
+                        id="sus_submit"
+                        class="add-btn width-20"
+                      >
+                        Subscribe
+                      </button>
+                      <div id="msg_Submit" class="h3 text-center hidden"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -498,88 +705,220 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Wellcome Area -->
+    <!-- End Wellcome Area -->
 
-  <!-- Start team Area -->
-  <div id="team" class="our-team-area area-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="section-headline text-center">
-            <h2>Our special Team</h2>
+    <!-- Practice Area Start -->
+    <div class="practice-area area-padding tw:bg-gray">
+      <div class="container">
+        <div class="cardHolder tw:grid tw:md:grid-cols-3 tw:gap-6 tw:">
+          <div
+            class="card tw:relative tw:flex tw:gap-6 tw:flex-wrap tw:bg-white tw:p-8 tw:shadow-lg tw:hover:shadow-none tw:transition-shadow tw:group tw:hover:text-white!"
+          >
+            <div class="tw:absolute tw:inset-0 tw:overflow-hidden">
+              <img
+                src="./img/bg-hover1.jpg"
+                class="tw:opacity-0 tw:group-hover:opacity-100 tw:transition-opacity tw:h-full! tw:w-full! tw:object-cover"
+                alt=""
+              />
+            </div>
+            <i
+              data-feather="briefcase"
+              class="tw:w-32 tw:h-auto tw:m-auto tw:z-0"
+            ></i>
+            <div class="card-text tw:transition-colors tw:z-0 tw:grow">
+              <h3 class="tw:group-hover:text-white!">
+                Business Consulting Services
+              </h3>
+              <ul>
+                <li>Business Plans</li>
+                <li>Commercial negotiations</li>
+                <li>Bids & Tenders</li>
+                <li>Corporate Entity structuring</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="card tw:relative tw:flex tw:gap-6 tw:flex-wrap tw:bg-white tw:p-8 tw:shadow-lg tw:hover:shadow-none tw:transition-shadow tw:group tw:hover:text-white!"
+          >
+            <div class="tw:absolute tw:inset-0 tw:overflow-hidden">
+              <img
+                src="./img/bg-hover1.jpg"
+                class="tw:opacity-0 tw:group-hover:opacity-100 tw:transition-opacity tw:h-full! tw:w-full! tw:object-cover"
+                alt=""
+              />
+            </div>
+            <i
+              data-feather="dollar-sign"
+              class="tw:w-32 tw:h-auto tw:m-auto tw:z-0"
+            ></i>
+            <div class="card-text tw:transition-colors tw:z-0 tw:grow">
+              <h3 class="tw:group-hover:text-white!">Compliance & Taxation</h3>
+              <ul>
+                <li>GST Filling</li>
+                <li>Tax Returns (individual & business)</li>
+                <li>Financial Statement preparation</li>
+                <li>ASIC submissions</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="card tw:relative tw:flex tw:gap-6 tw:flex-wrap tw:bg-white tw:p-8 tw:shadow-lg tw:hover:shadow-none tw:transition-shadow tw:group tw:hover:text-white!"
+          >
+            <div class="tw:absolute tw:inset-0 tw:overflow-hidden">
+              <img
+                src="./img/bg-hover1.jpg"
+                class="tw:opacity-0 tw:group-hover:opacity-100 tw:transition-opacity tw:h-full! tw:w-full! tw:object-cover"
+                alt=""
+              />
+            </div>
+            <i
+              data-feather="lock"
+              class="tw:w-32 tw:h-auto tw:m-auto tw:z-0"
+            ></i>
+            <div class="card-text tw:transition-colors tw:z-0 tw:grow">
+              <h3 class="tw:group-hover:text-white!">Financial Governance</h3>
+              <ul>
+                <li>Accounting (SME, Business, SMSF)</li>
+                <li>Book-keeping</li>
+                <li>Payroll</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="card tw:relative tw:flex tw:gap-6 tw:flex-wrap tw:bg-white tw:p-8 tw:shadow-lg tw:hover:shadow-none tw:transition-shadow tw:group tw:hover:text-white!"
+          >
+            <div class="tw:absolute tw:inset-0 tw:overflow-hidden">
+              <img
+                src="./img/bg-hover1.jpg"
+                class="tw:opacity-0 tw:group-hover:opacity-100 tw:transition-opacity tw:h-full! tw:w-full! tw:object-cover"
+                alt=""
+              />
+            </div>
+            <i
+              data-feather="watch"
+              class="tw:w-32 tw:h-auto tw:m-auto tw:z-0"
+            ></i>
+            <div class="card-text tw:transition-colors tw:z-0 tw:grow">
+              <h3 class="tw:group-hover:text-white!">Corporate Financing</h3>
+              <ul>
+                <li>Mergers & Acquisition</li>
+                <li>Valuations</li>
+                <li>Franchising</li>
+                <li>Mortgage Broking</li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="card tw:relative tw:flex tw:gap-6 tw:flex-wrap tw:bg-white tw:p-8 tw:shadow-lg tw:hover:shadow-none tw:transition-shadow tw:group tw:hover:text-white!"
+          >
+            <div class="tw:absolute tw:inset-0 tw:overflow-hidden">
+              <img
+                src="./img/bg-hover1.jpg"
+                class="tw:opacity-0 tw:group-hover:opacity-100 tw:transition-opacity tw:h-full! tw:w-full! tw:object-cover"
+                alt=""
+              />
+            </div>
+            <i
+              data-feather="shield"
+              class="tw:w-32 tw:h-auto tw:m-auto tw:z-0"
+            ></i>
+            <div class="card-text tw:transition-colors tw:z-0 tw:grow">
+              <h3 class="tw:group-hover:text-white!">
+                Financial Advisory Services
+              </h3>
+              <ul>
+                <li>Trusts</li>
+                <li>Procurement</li>
+                <li>Management Information Systems</li>
+                <li>General Ledger Systems</li>
+                <li>Transaction Structuring</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="team-top  ">
-          <div class="col-md-3 col-sm-3 col-xs-12 ">
-            <div class="single-team-member ">
-              <div class="team-img">
-                <a href="#">
-										<img src="img/team1-.jpg" alt="">
-									</a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-													<i class="fa fa-facebook"></i>
-												</a>
-                    </li>
-                    <li>
-                      <a href="#">
-													<i class="fa fa-twitter"></i>
-												</a>
-                    </li>
-                    <li>
-                      <a href="#">
-													<i class="fa fa-instagram"></i>
-												</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="team-content text-center">
-                <h4>Nihar Shah CPA MBA BEngg</h4>
-                <p>Principle/owner</p>
-              </div>
+    </div>
+    <!-- Practice Area End  -->
+
+    <!-- Start team Area -->
+    <div id="team" class="our-team-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Our special Team</h2>
             </div>
           </div>
-          <!-- End column -->
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="single-team-member ">
-              <div class="team-img">
-                <a href="#">
-										<img src="img/tema2.jpg" alt="">
-									</a>
-                <div class="team-social-icon text-center">
-                  <ul>
-                    <li>
-                      <a href="#">
-													<i class="fa fa-facebook"></i>
-												</a>
-                    </li>
-                    <li>
-                      <a href="#">
-													<i class="fa fa-twitter"></i>
-												</a>
-                    </li>
-                    <li>
-                      <a href="#">
-													<i class="fa fa-instagram"></i>
-												</a>
-                    </li>
-                  </ul>
+        </div>
+        <div class="row">
+          <div class="team-top">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                    <img src="img/team/1.jpg" alt="" />
+                  </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-instagram"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>Nihar Shah CPA MBA BEngg</h4>
+                  <p>Principle/owner</p>
                 </div>
               </div>
-              <div class="team-content text-center">
-                <h4>Forum Mehta CA</h4>
-                <p>Director</p>
+            </div>
+            <!-- End column -->
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <div class="single-team-member">
+                <div class="team-img">
+                  <a href="#">
+                    <img src="./img/team/2.jpg" alt="" />
+                  </a>
+                  <div class="team-social-icon text-center">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-facebook"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-twitter"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-instagram"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="team-content text-center">
+                  <h4>Forum Mehta CA</h4>
+                  <p>Director</p>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- End column -->
-          <!-- <div class="col-md-3 col-sm-3 col-xs-12">
+            <!-- End column -->
+            <!-- <div class="col-md-3 col-sm-3 col-xs-12">
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
@@ -611,8 +950,8 @@
               </div>
             </div>
           </div> -->
-          <!-- End column -->
-          <!-- <div class="col-md-3 col-sm-3 col-xs-12">
+            <!-- End column -->
+            <!-- <div class="col-md-3 col-sm-3 col-xs-12">
             <div class="single-team-member">
               <div class="team-img">
                 <a href="#">
@@ -644,371 +983,454 @@
               </div>
             </div>
           </div> -->
-          <!-- End column -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Team Area -->
-
-  <!-- Start reviews Area -->
-  <div class="reviews-area hidden-xs">
-    <div class="work-us">
-      <div class="work-left-text">
-        <a href="#">
-						<img src="img/about/2.jpg" alt="">
-					</a>
-      </div>
-      <div class="work-right-text text-center">
-        <h2>working with us</h2>
-        <h5>Accounting , Advisory , Tax and everything fot Individuals, SME , Corporates and Everyone.</h5>
-        <a href="#contact" class="ready-btn">Contact us</a>
-      </div>
-    </div>
-  </div>
-  <!-- End reviews Area -->
-
-
-
-  <!-- Start Testimonials -->
-  <div class="testimonials-area">
-    <div class="testi-inner area-padding">
-      <div class="testi-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <!-- Start testimonials Start -->
-            <div class="testimonial-content text-center">
-              <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
-              <!-- start testimonial carousel -->
-              <div class="testimonial-carousel">
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-Never visit this guy, he is a fraud. Once you visit him he will humiliate you , to get tax done thru him all the time. He will infact do ur tax himself and send you invoice and keep ur balance outstanding on your name. Disgraceful.
-                    </p>
-                    <h6>Guruji 777</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-Nihar and his team have made managing the financial side of my business so easy. They are proactive, highly intelligent and always have my best interests at heart. I'm not surprised that so many of their clients come by way of referral because I simply can't speak highly enough about them.                    </p>
-                    <h6>Liam Baxter</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-                <div class="single-testi">
-                  <div class="testi-text">
-                    <p>
-I highly recommend Victorian Accounting Services to anyone in need of top-notch accounting services. They are a fantastic team that delivers outstanding results every time.
-                    </p>
-                    <h6>Sachin Patel</h6>
-                  </div>
-                </div>
-                <!-- End single item -->
-              </div>
-            </div>
-            <!-- End testimonials end -->
-          </div>
-          <!-- End Right Feature -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Testimonials -->
-  <!-- Start Blog Area -->
-  <div id="blog" class="blog-area">
-    <div class="blog-inner area-padding">
-      <div class="blog-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Latest News</h2>
-            </div>
+            <!-- End column -->
           </div>
         </div>
-        <div class="row">
-          <!-- Start Left Blog -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img">
-                <a href="blog.html">
-										<img src="img/blog/1.jpg" alt="">
-									</a>
+      </div>
+    </div>
+    <!-- End Team Area -->
+
+    <!-- Start reviews Area -->
+    <div class="reviews-area hidden-xs">
+      <div class="work-us">
+        <div class="work-left-text">
+          <a href="#">
+            <img src="img/about/2.jpg" alt="" />
+          </a>
+        </div>
+        <div class="work-right-text text-center">
+          <h2>working with us</h2>
+          <h5>
+            Accounting , Advisory , Tax and everything fot Individuals, SME ,
+            Corporates and Everyone.
+          </h5>
+          <a href="#contact" class="ready-btn">Contact us</a>
+        </div>
+      </div>
+    </div>
+    <!-- End reviews Area -->
+
+    <!-- Start Testimonials -->
+    <div class="testimonials-area">
+      <div class="testi-inner area-padding">
+        <div class="testi-overly"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <!-- Start testimonials Start -->
+              <div class="testimonial-content text-center">
+                <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
+                <!-- start testimonial carousel -->
+                <div class="testimonial-carousel">
+                  <div class="single-testi">
+                    <div class="testi-text">
+                      <p>
+                        Never visit this guy, he is a fraud. Once you visit him
+                        he will humiliate you , to get tax done thru him all the
+                        time. He will infact do ur tax himself and send you
+                        invoice and keep ur balance outstanding on your name.
+                        Disgraceful.
+                      </p>
+                      <h6>Guruji 777</h6>
+                    </div>
+                  </div>
+                  <!-- End single item -->
+                  <div class="single-testi">
+                    <div class="testi-text">
+                      <p>
+                        Nihar and his team have made managing the financial side
+                        of my business so easy. They are proactive, highly
+                        intelligent and always have my best interests at heart.
+                        I'm not surprised that so many of their clients come by
+                        way of referral because I simply can't speak highly
+                        enough about them.
+                      </p>
+                      <h6>Liam Baxter</h6>
+                    </div>
+                  </div>
+                  <!-- End single item -->
+                  <div class="single-testi">
+                    <div class="testi-text">
+                      <p>
+                        I highly recommend Victorian Accounting Services to
+                        anyone in need of top-notch accounting services. They
+                        are a fantastic team that delivers outstanding results
+                        every time.
+                      </p>
+                      <h6>Sachin Patel</h6>
+                    </div>
+                  </div>
+                  <!-- End single item -->
+                </div>
               </div>
-              <div class="blog-meta">
-                <!-- <span class="comments-type">
+              <!-- End testimonials end -->
+            </div>
+            <!-- End Right Feature -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Testimonials -->
+    <!-- Start Blog Area -->
+    <div id="blog" class="blog-area">
+      <div class="blog-inner area-padding">
+        <div class="blog-overly"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>Latest News</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start Left Blog -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-blog">
+                <div class="single-blog-img">
+                  <a href="blog.html">
+                    <img src="img/blog/1.jpg" alt="" />
+                  </a>
+                </div>
+                <div class="blog-meta">
+                  <!-- <span class="comments-type">
 										<i class="fa fa-comment-o"></i>
 										<a href="#">13 comments</a>
 									</span> -->
-                <span class="date-type">
-										<i class="fa fa-calendar"></i>28-may-2025
-									</span>
+                  <span class="date-type">
+                    <i class="fa fa-calendar"></i>28-may-2025
+                  </span>
+                </div>
+                <div class="blog-text">
+                  <h4>
+                    <a href="blog.html">Assumenda repud eum veniam</a>
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud
+                    eum veniam optio modi sit explicabo nisi magnam
+                    quibusdam.sit amet conse adipis elit Assumenda repud eum
+                    veniam optio modi sit explicabo nisi magnam quibusdam.
+                  </p>
+                </div>
+                <span>
+                  <a href="blog.html" class="ready-btn">Read more</a>
+                </span>
               </div>
-              <div class="blog-text">
-                <h4>
-                                        <a href="blog.html">Assumenda repud eum veniam</a>
-									</h4>
-                <p>
-                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                </p>
-              </div>
-              <span>
-									<a href="blog.html" class="ready-btn">Read more</a>
-								</span>
+              <!-- Start single blog -->
             </div>
-            <!-- Start single blog -->
-          </div>
-          <!-- End Left Blog-->
-          <!-- Start Left Blog -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img">
-                <a href="blog.html">
-										<img src="img/blog/2.jpg" alt="">
-									</a>
-              </div>
-              <div class="blog-meta">
-                <!-- <span class="comments-type">
+            <!-- End Left Blog-->
+            <!-- Start Left Blog -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-blog">
+                <div class="single-blog-img">
+                  <a href="blog.html">
+                    <img src="img/blog/2.jpg" alt="" />
+                  </a>
+                </div>
+                <div class="blog-meta">
+                  <!-- <span class="comments-type">
 										<i class="fa fa-comment-o"></i>
 										<a href="#">13 comments</a>
 									</span> -->
-                <span class="date-type">
-										<i class="fa fa-calendar"></i>28-may-2025
-									</span>
+                  <span class="date-type">
+                    <i class="fa fa-calendar"></i>28-may-2025
+                  </span>
+                </div>
+                <div class="blog-text">
+                  <h4>
+                    <a href="blog.html">Explicabo magnam quibusdam.</a>
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud
+                    eum veniam optio modi sit explicabo nisi magnam
+                    quibusdam.sit amet conse adipis elit Assumenda repud eum
+                    veniam optio modi sit explicabo nisi magnam quibusdam.
+                  </p>
+                </div>
+                <span>
+                  <a href="blog.html" class="ready-btn">Read more</a>
+                </span>
               </div>
-              <div class="blog-text">
-                <h4>
-                                        <a href="blog.html">Explicabo magnam quibusdam.</a>
-									</h4>
-                <p>
-                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                </p>
-              </div>
-              <span>
-									<a href="blog.html" class="ready-btn">Read more</a>
-								</span>
+              <!-- Start single blog -->
             </div>
-            <!-- Start single blog -->
-          </div>
-          <!-- End Left Blog-->
-          <!-- Start Right Blog-->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="single-blog">
-              <div class="single-blog-img">
-                <a href="blog.html">
-										<img src="img/blog/3.jpg" alt="">
-									</a>
-              </div>
-              <div class="blog-meta">
-                <!-- <span class="comments-type">
+            <!-- End Left Blog-->
+            <!-- Start Right Blog-->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="single-blog">
+                <div class="single-blog-img">
+                  <a href="blog.html">
+                    <img src="img/blog/3.jpg" alt="" />
+                  </a>
+                </div>
+                <div class="blog-meta">
+                  <!-- <span class="comments-type">
 										<i class="fa fa-comment-o"></i>
 										<a href="#">13 comments</a>
 									</span> -->
-                <span class="date-type">
-										<i class="fa fa-calendar"></i>28-may-2025
-									</span>
+                  <span class="date-type">
+                    <i class="fa fa-calendar"></i>28-may-2025
+                  </span>
+                </div>
+                <div class="blog-text">
+                  <h4>
+                    <a href="blog.html">Lorem ipsum dolor sit amet</a>
+                  </h4>
+                  <p>
+                    Lorem ipsum dolor sit amet conse adipis elit Assumenda repud
+                    eum veniam optio modi sit explicabo nisi magnam
+                    quibusdam.sit amet conse adipis elit Assumenda repud eum
+                    veniam optio modi sit explicabo nisi magnam quibusdam.
+                  </p>
+                </div>
+                <span>
+                  <a href="blog.html" class="ready-btn">Read more</a>
+                </span>
               </div>
-              <div class="blog-text">
-                <h4>
-                                        <a href="blog.html">Lorem ipsum dolor sit amet</a>
-									</h4>
-                <p>
-                  Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
-                </p>
-              </div>
-              <span>
-									<a href="blog.html" class="ready-btn">Read more</a>
-								</span>
             </div>
+            <!-- End Right Blog-->
           </div>
-          <!-- End Right Blog-->
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Blog -->
- 
-  <!-- Start contact Area -->
-  <div id="contact" class="contact-area">
-    <div class="contact-inner area-padding">
-      <div class="contact-overly"></div>
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Contact us</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <!-- Start contact icon column -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-              <div class="single-icon">
-                <i class="fa fa-mobile"></i>
-                <p>
-                  Call:+61 - (0) 4 35 35 36 36<br>
-                  <span>Mon-Fri 8:30 AM- 8:30 PM<br>
-                  Phones are open 24/7</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Start contact icon column -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-              <div class="single-icon">
-                <i class="fa fa-envelope-o"></i>
-                <p>
-                 nihar@victorianaccountingservices.com.au
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Start contact icon column -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-              <div class="single-icon">
-                <i class="fa fa-map-marker"></i>
-                <p>
-                 7 Kalimna Way, Truganina VIC 3029<br>
-                  <!-- <span>NY 535022, USA</span> -->
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
+    <!-- End Blog -->
 
-          <!-- Start Google Map -->
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <!-- Start Map -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-            <!-- End Map -->
-          </div>
-          <!-- End Google Map -->
-
-          <!-- Start  contact -->
-          <div class="col-md-6 col-sm-6 col-xs-12">
-            <div class="form contact-form">
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                  <div class="validation"></div>
-                </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </form>
+    <!-- Start contact Area -->
+    <div id="contact" class="contact-area">
+      <div class="contact-inner area-padding">
+        <div class="contact-overly"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>Contact us</h2>
+              </div>
             </div>
           </div>
-          <!-- End Left contact -->
+          <div class="row">
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-mobile"></i>
+                  <p>
+                    Call:+61 - (0) 4 35 35 36 36<br />
+                    <span
+                      >Mon-Fri 8:30 AM- 8:30 PM<br />
+                      Phones are open 24/7</span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-envelope-o"></i>
+                  <p>nihar@victorianaccountingservices.com.au</p>
+                </div>
+              </div>
+            </div>
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-map-marker"></i>
+                  <p>
+                    7 Kalimna Way, Truganina VIC 3029<br />
+                    <!-- <span>NY 535022, USA</span> -->
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start Google Map -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <!-- Start Map -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
+                width="100%"
+                height="380"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen
+              ></iframe>
+              <!-- End Map -->
+            </div>
+            <!-- End Google Map -->
+
+            <!-- Start  contact -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form contact-form">
+                <div id="sendmessage">
+                  Your message has been sent. Thank you!
+                </div>
+                <div id="errormessage"></div>
+                <form action="" method="post" role="form" class="contactForm">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your Name"
+                      data-rule="minlen:4"
+                      data-msg="Please enter at least 4 chars"
+                    />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                      placeholder="Your Email"
+                      data-rule="email"
+                      data-msg="Please enter a valid email"
+                    />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="subject"
+                      id="subject"
+                      placeholder="Subject"
+                      data-rule="minlen:4"
+                      data-msg="Please enter at least 8 chars of subject"
+                    />
+                    <div class="validation"></div>
+                  </div>
+                  <div class="form-group">
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="5"
+                      data-rule="required"
+                      data-msg="Please write something for us"
+                      placeholder="Message"
+                    ></textarea>
+                    <div class="validation"></div>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit">Send Message</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- End Left contact -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End Contact Area -->
+    <!-- End Contact Area -->
 
-  <!-- Start Footer bottom Area -->
-  <footer>
-    <div class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <div class="footer-logo">
-                  <!-- <h2><span>e</span>Business</h2> -->
-                    <img src="img/logo.png" alt="" title="" height="50px" width="200px"/>
+    <!-- Start Footer bottom Area -->
+    <footer>
+      <div class="footer-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <div class="footer-logo">
+                    <!-- <h2><span>e</span>Business</h2> -->
+                    <img
+                      src="img/logo.png"
+                      alt=""
+                      title=""
+                      height="50px"
+                      width="200px"
+                    />
+                  </div>
+
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis.
+                  </p>
                 </div>
-
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
-               
               </div>
             </div>
-          </div>
-           <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>Quick Links</h4>
-                <!-- <p>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <h4>Quick Links</h4>
+                  <!-- <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
                 </p> -->
-                <div class="footer-contacts">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="fa fa-angle-right"></i>Home</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-angle-right"></i>About</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-angle-right"></i>Services</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-angle-right"></i>Blog</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-angle-right"></i>Contact</a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-angle-right"></i>Privacy Policy</a>
+                  <div class="footer-contacts">
+                    <ul>
+                      <li>
+                        <a href="#"><i class="fa fa-angle-right"></i>Home</a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-angle-right"></i>About</a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><i class="fa fa-angle-right"></i>Services</a
+                        >
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-angle-right"></i>Blog</a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-angle-right"></i>Contact</a>
+                      </li>
+                      <li>
+                        <a href="#"
+                          ><i class="fa fa-angle-right"></i>Privacy Policy</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>information</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
-                </p>
-                <div class="footer-contacts">
-                  <p><span>Tel:</span> +61 - (0) 4 35 35 36 36</p>
-                  <p><span>Email:</span> nihar@victorianaccountingservices.com.au</p>
-                  <p><span>Working Hours:</span> 8:30am-8:30pm</p>
-                </div>
-                 <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </li>
+            <!-- end single footer -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="footer-content">
+                <div class="footer-head">
+                  <h4>information</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor.
+                  </p>
+                  <div class="footer-contacts">
+                    <p><span>Tel:</span> +61 - (0) 4 35 35 36 36</p>
+                    <p>
+                      <span>Email:</span>
+                      nihar@victorianaccountingservices.com.au
+                    </p>
+                    <p><span>Working Hours:</span> 8:30am-8:30pm</p>
+                  </div>
+                  <div class="footer-icons">
+                    <ul>
+                      <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                      </li>
                       <!-- <a href="#"><i class="fa fa-twitter"></i></a>
                     </li>
                     <li>
                       <a href="#"><i class="fa fa-google"></i></a>
                     </li> -->
-                    <!-- <li>
+                      <!-- <li>
                       <a href="#"><i class="fa fa-pinterest"></i></a>
                     </li> -->
-                  </ul>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- end single footer -->
-          <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+            <!-- end single footer -->
+            <!-- <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="footer-content">
               <div class="footer-head">
                 <h4>Instagram</h4>
@@ -1023,53 +1445,56 @@ I highly recommend Victorian Accounting Services to anyone in need of top-notch 
               </div>
             </div>
           </div> -->
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-area-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="copyright text-center">
-              <p>
-                &copy; Copyright <strong>Victorian Accounting Services</strong>. All Rights Reserved
-               
-              </p>
-            </div>
-            <div class="credits">
-              <!--
+      <div class="footer-area-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="copyright text-center">
+                <p>
+                  &copy; Copyright
+                  <strong>Victorian Accounting Services</strong>. All Rights
+                  Reserved
+                </p>
+              </div>
+              <div class="credits">
+                <!--
                 All the links in the footer should remain intact.
                 You can delete the links only if you purchased the pro version.
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
               -->
-              Designed by <a href="https://mysisco.com.au/">MYSISCOICT</a>
+                Designed by <a href="https://mysisco.com.au/">MYSISCOICT</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/venobox/venobox.min.js"></script>
-  <script src="lib/knob/jquery.knob.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/parallax/parallax.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
-  <script src="lib/appear/jquery.appear.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/venobox/venobox.min.js"></script>
+    <script src="lib/knob/jquery.knob.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/parallax/parallax.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script
+      src="lib/nivo-slider/js/jquery.nivo.slider.js"
+      type="text/javascript"
+    ></script>
+    <script src="lib/appear/jquery.appear.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
 
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
 
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/main.js"></script>
+  </body>
 </html>
