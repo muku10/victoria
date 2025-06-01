@@ -60,3 +60,16 @@ footer .fa-angle-right {
   -webkit-line-clamp: 3;
   overflow: clip;
 }
+
+.practice-area ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+}
+
+/* @media (max-width: 767px) {
+  img.nivo-main-image {
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    object-position: center;
+  }
+} */

@@ -299,6 +299,9 @@
   .tw\:object-cover {
     object-fit: cover;
   }
+  .tw\:object-center {
+    object-position: center;
+  }
   .tw\:p-4 {
     padding: calc(var(--tw-spacing) * 4);
   }
@@ -419,6 +422,21 @@
         --tw-shadow: 0 0 #0000;
         box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
       }
+    }
+  }
+  .tw\:max-md\:aspect-\[2\/3\] {
+    @media (width < 48rem) {
+      aspect-ratio: 2/3;
+    }
+  }
+  .tw\:max-md\:h-auto {
+    @media (width < 48rem) {
+      height: auto;
+    }
+  }
+  .tw\:max-md\:w-full {
+    @media (width < 48rem) {
+      width: 100%;
     }
   }
   .tw\:md\:columns-2 {
